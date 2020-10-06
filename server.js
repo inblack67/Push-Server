@@ -16,6 +16,9 @@ webpush.setVapidDetails(
 app.use(express.json());
 app.use(cors());
 
+app.get('/', (req, res) => {
+  res.send('Deduce');
+});
 app.get('/api', (req, res) => {
   res.status(200).json({ success: true, msg: 'API up and running' });
 });
