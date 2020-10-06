@@ -16,6 +16,10 @@ webpush.setVapidDetails(
 app.use(express.json());
 app.use(cors());
 
+app.get('/api', (req, res) => {
+  res.status(200).json({ success: true, msg: 'API up and running' });
+});
+
 app.post('/api', (req, res) => {
   const subscription = req.body;
   res.status(201).json({ success: true, msg: 'subscription received' });
